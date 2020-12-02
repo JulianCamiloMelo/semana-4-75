@@ -11,7 +11,7 @@
         "storage": "./database.sqlite3"
     },
     "production": {
-        "use_env_variable": "JAWSDB_URL",
-        "dialect": "mysql"
+        "dialect": "sqlite",
+        "storage": "./database.sqlite3"
     }
 }
