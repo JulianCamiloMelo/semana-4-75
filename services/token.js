@@ -31,7 +31,7 @@ module.exports = {
     decode: async(token) => {
         try {
             const { id } = await jwt.verify(token, 'secretKeyToGenerateToken');
-            const user = await models.Usuario.findOne({ where: { id: id, estado: 1 } });
+            const user = await models.Usuario.findOne({ where: { id: id } });
             if (user) {
                 return user;
             } else {

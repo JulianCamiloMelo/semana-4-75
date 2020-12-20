@@ -97,7 +97,7 @@ module.exports = {
     login: async(req, res, next) => {
         try {
             console.log(req.body.email)
-            let user = await models.Usuario.findOne({ where: { email: req.body.email, estado: 1 } });
+            let user = await models.Usuario.findOne({ where: { email: req.body.email } });
             if (user) {
                 let match = await bcrypt.compare(req.body.password, user.password);
                 if (match) {
